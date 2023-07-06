@@ -1,0 +1,107 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    box-sizing: border-box
+}
+
+ :root {
+    --prim: #28282B;
+    --sec: lightskyblue;
+    --third: violet;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2vh;
+    padding-top: 1vw;
+    background-color: navajowhite;
+}
+
+h1 {
+    margin-top: 0;
+    text-align: center;
+    color: #333;
+}
+
+.description {
+    margin: auto;
+    width: 60vw;
+    font-size: 1.2vw;
+    text-align: center;
+    padding: 3vh;
+}
+
+form {
+    margin-top: 2vh;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 2vh;
+    color: #666;
+}
+
+input[type="file"],
+input[type="url"] {
+    padding: 1vw;
+    border: 0.2vw solid #ccc;
+    border-radius: 1vw;
+    width: 40vw;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    padding: 2vw 4vw;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 1vw;
+    cursor: pointer;
+}
+
+#cover_letter_container {
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-top: 1vh;
+    text-align: left;
+}
+
+h2 {
+    color: #333;
+}
+
+.cover-letter {
+    margin-top: 2vh;
+    background-color: #fff;
+    border: 0.2vw solid #ccc;
+    border-radius: 1.1vw;
+    padding: 2vw;
+    white-space: pre-wrap;
+    overflow: auto;
+    display: block;
+    word-break: break-word;
+}
+
+pre {
+    margin: 1%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1vw;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: normal;
+}
+
+footer {
+    text-align: center;
+    margin-top: 3%;
+    background-color: black;
+    color: white;
+    padding: 2vh;
+}

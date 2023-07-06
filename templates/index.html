@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Resume Cover Letter Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <h1>Custom Cover Letter Generator</h1>
+    <p class="description">
+        Cover letters are obsolete, but unfortunately, a large number of companies still require them as part of their job applications. This webapp is designed to relieve you of the tedious task that is writing a cover letter. Simply upload a pdf of your resume,
+        provide a link to the job description for the position you want to apply to, and a neat cover letter, tailored to your resume and the posting, will be ready in under a minute.
+    </p>
+    <form action="/generate_cover_letter" method="post" enctype="multipart/form-data">
+        <label for="resume">Upload Resume:</label>
+        <input type="file" name="resume" id="resume" accept=".pdf" required>
+        <br><br>
+        <label for="job_description">Job Description URL:</label>
+        <input type="url" name="job_description" id="job_description" required>
+        <br><br>
+        <input type="submit" value="Generate Cover Letter">
+    </form>
+    <div id="cover_letter_container">
+        <h2>Cover Letter</h2>
+        <div id="cover-letter" class="cover-letter">
+            <pre>{{ cover_letter }}</pre>
+        </div>
+    </div>
+    <footer>
+        <p>Created by Shloke Meresh</p>
+        <p>Powered by OpenAI ChatGPT</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
