@@ -48,17 +48,20 @@ def generate_cover_letter():
     openai.api_key = os.getenv('api_key')
 
     # Generate the custom cover letter using OpenAI API
-    response = openai.Completion.create(
-        engine='text-davinci-003',
-        prompt=f"Write a cover letter, no less than 500 words, based on the following job description:\n\n{job_description_text}\n\n tailored to the following resume:\n\n{resume_text}\n\n",
+    MODEL = "gpt-3.5-turbo"
+    response = openai.ChatCompletion.create(
+        model=MODEL,
+        messages=[
+            {"role": "system", "content": "Please omit the header/letterhead and fill in all remaining placeholders yourself based on the information in the resume."},
+            {"role": "user", "content": f"Write a ready-to-go cover letter, no less than 500 words, based on the following job description:\n\n{job_description_text}\n\n tailored to the following resume:\n\n{resume_text}\n\n"}
+        ],
         max_tokens=600,
         temperature=0.7,
         n=1,
         stop=None,
-        timeout=60
     )
 
-    generated_cover_letter = response.choices[0].text.strip()
+    generated_cover_letter = response.choices[0].message.content.strip()
 
     return render_template('index.html', cover_letter=generated_cover_letter)
 
