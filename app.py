@@ -48,7 +48,7 @@ def generate_cover_letter():
     openai.api_key = os.getenv('api_key')
 
     # Generate the custom cover letter using OpenAI API
-    MODEL = "gpt-3.5-turbo"
+    MODEL = "gpt-4-1106-preview"
     response = openai.ChatCompletion.create(
         model=MODEL,
         messages=[
